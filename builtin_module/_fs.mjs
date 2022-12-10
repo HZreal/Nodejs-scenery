@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'fs'
+import * as path from 'path'
 
 
 // 注意： 文件路径是以当前node执行命令所在目录作为基准进行拼接，而不是当前js文件所在目录作为基准
@@ -32,8 +32,8 @@ const data = fs.readFileSync(pathStr).toString()
 console.log(data);
 
 
-const content = ''
-fs.writeFileSync(pathStr, content)
+// const content = ''
+// fs.writeFileSync(pathStr, content)
 
 
 

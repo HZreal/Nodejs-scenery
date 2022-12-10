@@ -1,4 +1,5 @@
-const http = require('http');
+// const http = require('http');
+import * as http from 'http'
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -9,7 +10,7 @@ const server = http.createServer((req, res) => {
   res.end('Hello, World!\n');
 });
 
-// 监听事件
+// 给server绑定request事件
 server.on('request', (req) => {
   console.log(req.url)
 })

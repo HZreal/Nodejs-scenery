@@ -15,16 +15,17 @@
 // npm config
 // npm config set
 // npm config get
-// 设置仓库源 npm config set registry https://registry.npm.taobao.org
+// 如 查看仓库源 npm config get registry
+// 如 设置仓库源 npm config set registry https://registry.npm.taobao.org
 
 
-// npm install <package_name> / npm i <package_name>   安装包
+// npm install <package_name> 可简写为 npm i <package_name>   安装包
 // 全局安装 --global / -g
 // 安装开发环境依赖  --save-dev  / -i -D
 // 安装生产环境依赖（默认） --save-prod / -i -P
 // 同时安装多个包       npm i express cheerio axios
 // 安装具有相同前缀的多个包      npm i eslint-{plugin-import,plugin-react,loader} express
- 
+// 指定包名的版本号，如comment@2.24.0，其中数字位分别是大版本号、小版本号（功能号）、修复版本号
 
 // NPM scripts
 // 用于自定义脚本

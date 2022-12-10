@@ -1,11 +1,11 @@
 // module内置变量
-
 // module代表当前js模块
 
 
 // 默认情况下，文件中定义的任何其他对象或变量都是私有的，不会公开给外界
 // 当将对象或函数赋值为新的 exports 属性时，这就是要被公开的内容，也即是对外的接口
-// require()加载模块时，实际就是加载该模块的exports属性
+
+// require()加载模块时，实际就是加载该模块的exports属性，即module.exports
 
 console.log(module)
 

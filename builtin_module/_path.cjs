@@ -5,6 +5,7 @@ const pathStr = path.join('/aa', '/bb', 'cc')
 console.log('path-------------', pathStr)
 
 
+// 注意ES module中没有__dirname
 var abstractPath = path.join(__dirname, './ttest.txt')
 console.log(abstractPath)
 
