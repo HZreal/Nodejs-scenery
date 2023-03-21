@@ -6,3 +6,6 @@ function pad(n) {
 
 
 console.log(pad(5));
+console.log(__dirname);
+console.log('../../');
+

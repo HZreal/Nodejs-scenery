@@ -1,22 +1,52 @@
 import * as child_process from 'child_process'
+// https://nodejs.org/api/child_process.html
 import { promisify } from 'util';
 
-// spawn、exec、execFile、fork 四个函数   对应同步函数：spawnSync、execSync、execFileSync
+// spawn、exec、execFile、fork 四个函数
+// 对应同步函数：spawnSync、execSync、execFileSync，其中 fork 没有对应的 forkSync
 
-const exec = promisify(child_process.exec);
-const execFile = promisify(child_process.execFile);
+// exec() 内部调用 execFile() 来实现，而 execFile() 内部调用 spawn() 来实现
 
 
-// exec
+
+
+
+// 1. exec
 // child_process.exec(command[, options][, callback])
-const { stdout1, stderr1 } = await exec('python hello.py')
+// exec() 内部调用 execFile() 来实现。默认会创建shell并在其中执行命令。通常用于windows，原因是 On Windows，.bat and .cmd files are not executable on their own without a terminal, and therefore cannot be launched using child_process.execFile()
+const execChildProcess = child_process.exec('python hello.py', (err, stdout, stderr) => { 
+    if(err) {
+        console.error('err: ' + err);
+        return;
+    }
+    console.log('stdout: ' + stdout);
+    console.log('stderr: ' + stderr)
+})
+execChildProcess.on('data', (data) => { })
+
+// 回调转成promise
+const execPromise = promisify(child_process.exec);
+const { stdout1, stderr1 } = await execPromise('python hello.py')
 console.log('stdout1  ------>  ', stdout1);
 console.log('stderr1  ------>  ', stderr1);
 
 
-// execFile
+// 2. execFile
 // child_process.execFile(file[, args][, options][, callback])
-const { stdout2, stderr2 } = await execFile('python', [' hello.py', 'params1', 'params2'], {stdio:'inherit'})
+// execFile() 内部调用 spawn() 来实现。默认不开启shell。较于exec会更高效，
+const execFileChildProcess = child_process.execFile('python hello.py', (err, stdout, stderr) => { 
+    if(err) {
+        console.error('err: ' + err);
+        return;
+    }
+    console.log('stdout: ' + stdout);
+    console.log('stderr: ' + stderr)
+})
+execFileChildProcess.on('data', (data) => { })
+
+// 回调转成promise
+const execFilePromise = promisify(child_process.execFile);
+const { stdout2, stderr2 } = await execFilePromise('python', [' hello.py', 'params1', 'params2'], {stdio:'inherit'})
 console.log('stdout2  ------>  ', stdout2);
 console.log('stderr2  ------>  ', stderr2);
 
@@ -24,14 +54,15 @@ console.log('stderr2  ------>  ', stderr2);
 
 
 
-// fork
+// 3. fork
 // child_process.fork(modulePath[, args][, options])
-// 专门用于创建新的 js 子进程，不能是其他语言程序
+// 专门用于创建新的 nodejs 子进程，不能是其他语言程序
 // 无回调，参数要以第二个参数传入
 // 返回的子进程将内置一个额外的ipc通信通道，允许消息在父进程和子进程之间来回传递。
 
 
- 
+ // 4. spawn
+// spawn方法是上面方法实现的继基础
 child_process.spawn()
 
 
