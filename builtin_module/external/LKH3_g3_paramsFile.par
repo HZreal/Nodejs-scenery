@@ -1,0 +1,6 @@
+PROBLEM_FILE = LKH3_datafile.tsp
+OUTPUT_TOUR_FILE = LKH3_tourfile.tour
+MOVE_TYPE = 5
+PATCHING_C = 3
+PATCHING_A = 2
+RUNS = 8
