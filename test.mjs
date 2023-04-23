@@ -18,20 +18,20 @@ console.log('timestamp  ------>  ', timestamp);  // 1646153819999.9973  小8h
 // excel time-- > 时间戳 用
 
 
-const date = new Date(timestamp)  
-console.log('date  ------>  ', date);      // 未补时区
-const toString = date.toString()
-const ISOString = date.toISOString()
-console.log('toString ---->  ', toString)    // 补时区的时间  GMT+0800 (中国标准时间)
-console.log('ISOString ---->  ', ISOString)
+// const date = new Date(timestamp)  
+// console.log('date  ------>  ', date);      // 未补时区
+// const toString = date.toString()
+// const ISOString = date.toISOString()
+// console.log('toString ---->  ', toString)    // 补时区的时间  GMT+0800 (中国标准时间)
+// console.log('ISOString ---->  ', ISOString)
 
 
-const momentObj = moment(timestamp)
-console.log('momentObj  ------>  ', momentObj);   // 补时区的时间
-console.log(momentObj.format('YYYY-MM-DD HH:mm:ss'))   // 补时区的时间  GMT+0800 (中国标准时间)
-console.log('toString ---->  ', momentObj.toString())  // 补时区的时间  GMT+0800 (中国标准时间)
-console.log('ISOString ---->  ', momentObj.toISOString())
-console.log('toLocaleString ---->  ', momentObj.toLocaleString())
+// const momentObj = moment(timestamp)
+// console.log('momentObj  ------>  ', momentObj);   // 补时区的时间
+// console.log(momentObj.format('YYYY-MM-DD HH:mm:ss'))   // 补时区的时间  GMT+0800 (中国标准时间)
+// console.log('toString ---->  ', momentObj.toString())  // 补时区的时间  GMT+0800 (中国标准时间)
+// console.log('ISOString ---->  ', momentObj.toISOString())
+// console.log('toLocaleString ---->  ', momentObj.toLocaleString())
 
 
 
