@@ -19,6 +19,7 @@
     "@turf/collect": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "clickhouse": "^2.5.1",
+    "dockerode": "^3.3.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "mongodb": "^4.8.1",
