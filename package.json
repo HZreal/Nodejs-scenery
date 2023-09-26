@@ -1,6 +1,7 @@
 {
   "name": "nodeBasics",
   "version": "1.0.0",
+  "type": "module",
   "main": "first.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,12 +20,12 @@
     "@turf/collect": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "clickhouse": "^2.5.1",
+    "dayjs": "^1.11.9",
     "dockerode": "^3.3.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "mongodb": "^4.8.1",
     "mysql": "^2.18.1"
   },
-  "devDependencies": {},
   "description": ""
 }
