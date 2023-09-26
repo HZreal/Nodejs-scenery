@@ -6,31 +6,7 @@ function dataType(){
 }
 
 
-/**
- * 异常捕获
- */
-function exceptionCapture() {
-    const beInvokedFunc = (p)=> {
-        try {
-            // mock 数据库查询 p
 
-            // TODO
-            throw new Error();
-        } catch (err) {
-            console.log('err  ---->  ', err);
-            return null
-        }
-    }
-    const invoker=()=> {
-        try {
-            const result = beInvokedFunc('c');
-            console.log('result  ---->  ', result);
-        } catch (err) {
-            console.log('err  ---->  ', err);
-        }
-    }
-    invoker()
-}
 
 /**
  * 模块引入
@@ -81,9 +57,6 @@ function main() {
     //
 
     //
-
-    //
-    // exceptionCapture()
 
     //
     introduceModule()
