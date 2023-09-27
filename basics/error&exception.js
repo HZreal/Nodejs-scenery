@@ -24,12 +24,27 @@ function jsError() {
     // console.log('errName, errMessage, errStack  ---->  ', errName, errMessage, errStack);
 
     // Error的派生对象
-    // SyntaxError: 解析代码时发生的语法错误
-    // ReferenceError: 引用一个不存在的变量
-    // RangeError: 值超出有效范围
-    // TypeError: 变量或参数不符合预期类型
-    // URIError: URI相关函数的参数不正确
-    // EvalError: eval函数没有被正确执行
+    // https://blog.bitsrc.io/types-of-native-errors-in-javascript-you-must-know-b8238d40e492
+    // 1. SyntaxError: 解析代码时发生的语法错误，例如：
+    // let cat h = "cat"
+
+    // 2. ReferenceError: 引用一个不存在的变量，例如：
+    // const cat = "cat"
+    // console.log(dog)
+
+    // 3. RangeError: 值超出有效范围，例如：
+    // const arr = [90,88]
+    // arr.length=90**99
+
+    // 4. TypeError: 变量或参数不符合预期类型，例如：
+    // const num = 123
+    // num.toUpperCase()
+
+    // 5. URIError: URI相关函数的参数不正确，例如：
+    // decodeURI("%")
+
+    // 6. EvalError: eval函数没有被正确执行，例如：
+    // eval()
 
     // 自定义Error
     class customError extends Error {
@@ -39,7 +54,6 @@ function jsError() {
             this.message = message
         }
     }
-
     try {
         throw new customError('something Error')
     } catch (e) {
