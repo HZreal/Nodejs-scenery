@@ -76,3 +76,27 @@ console.log(process.npm_package_config_myVariable) // Hello World
 // 我们就可以使用 cross-env命令，这样我们就不必担心平台设置或使用环境变量了。
 // 也就是说 cross-env 能够提供一个设置环境变量的scripts，这样我们就能够以unix方式设置环境变量，然而在windows上也能够兼容的。
 // npm install --save-dev cross-env
+
+
+/**
+ * npm workspace
+ */
+// ！！！参考：https://juejin.cn/post/7056644043098456071
+// 应用于本地模块开发
+
+// -- root dir
+// -- node_modules
+// -- package
+//    -- sub_workspace_a            // 子工作区a
+//       -- node_modules
+//       -- package.json
+//    -- sub_workspace_b            // 子工作区b
+//       -- node_modules
+//       -- package.json
+//    -- sub_workspace_c            // 子工作区c
+//       -- node_modules
+//       -- package.json
+// -- package.json                  // 在 workspace 字段中声明所有工作区; 在 dependencies 中声明子工作区中的模块 
+
+// 1.依赖共享。子工作区可以使用主工作区的所有依赖
+// 2.导出子工作区，供所有工作区使用。可以将子工作区导出到node_modules中，供所有工作区使用
