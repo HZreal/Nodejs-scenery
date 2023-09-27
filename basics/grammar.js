@@ -1,17 +1,16 @@
 /**
  * TODO 数据类型
  */
-function dataType(){
+function dataType() {
 
 }
-
-
 
 
 /**
  * 模块引入
  */
 const {add} = require('./myModule/public')
+
 // import {sub} from './myModule/public' // ES module
 function introduceModule() {
     const a = 1
@@ -66,4 +65,5 @@ function main() {
 
     //
 }
+
 main()
