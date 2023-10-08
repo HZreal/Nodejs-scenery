@@ -1,11 +1,14 @@
 /**
  * 错误 异常
+ *
  * 参考: https://mainpage.github.io/2020/07/05/error-and-exception/
+ *
  * 为什么要进行错误（Error）处理？
  *      程序崩溃退出
  *      HTTP请求无响应（web程序）
  *      数据被修改了一半，出现不一致
  *      无法定位和排查错误
+ *
  *  作用:
  *      避免程序崩溃或无响应
  *      控制错误终端的位置，必要的情况执行回滚操作，保证数据一致性
@@ -21,7 +24,10 @@ function jsError() {
     const errName = err.name // 错误名称
     const errMessage = err.message; // 错误的描述信息
     const errStack = err.stack; // 调用堆栈信息
+    
     // console.log('errName, errMessage, errStack  ---->  ', errName, errMessage, errStack);
+
+    // Error.captureStackTrace()
 
     // Error的派生对象
     // https://blog.bitsrc.io/types-of-native-errors-in-javascript-you-must-know-b8238d40e492
@@ -54,6 +60,7 @@ function jsError() {
             this.message = message
         }
     }
+
     try {
         throw new customError('something Error')
     } catch (e) {
@@ -199,8 +206,8 @@ function errorWrapper() {
 
 function main() {
     jsError()
-    exceptionCapture()
-    errorTypes()
+    // exceptionCapture()
+    // errorTypes()
 
 }
 
