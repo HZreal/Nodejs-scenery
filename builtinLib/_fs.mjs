@@ -3,11 +3,10 @@ import * as path from 'path'
 
 
 // 注意： 文件路径是以当前node执行命令所在目录作为基准进行拼接，而不是当前js文件所在目录作为基准
-// 如 F:\nodejs\nodejsBasics> node .\builtin_module\_fs.js 会报错
+// 如 F:\nodejs\nodejs-scenery> node .\builtin_module\_fs.js 会报错
 
 // var pathStr = './ttest.txt'
 var pathStr = path.join('./', '/ttest.txt')
-
 
 
 // fs.readFile(pathStr, (err, data) => {
@@ -24,7 +23,6 @@ var pathStr = path.join('./', '/ttest.txt')
 //         console.log('写入失败的错误-----', err.message)
 //     }
 // })
-
 
 
 // 同步读写
