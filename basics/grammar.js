@@ -47,6 +47,19 @@ function globalObject() {
 
 }
 
+/**
+ * 通过 ... 符号排出一个对象中的某些属性
+ */
+function excludeFieldFromObject(){
+    const obj = {
+            userId: 1,
+            username: 'john',
+            password: 'changeme',
+    }
+    const {password, ...extra} = obj
+    console.log('extra  ---->  ', extra);
+}
+
 
 function main() {
     // dataType()
@@ -64,6 +77,7 @@ function main() {
     globalObject()
 
     //
+    excludeFieldFromObject()
 }
 
 main()
