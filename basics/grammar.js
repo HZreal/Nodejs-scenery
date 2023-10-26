@@ -24,18 +24,18 @@ function introduceModule() {
  * 全局对象
  */
 function globalObject() {
-    __dirname
-    __filename
-    console
-    global
-    exports
-    module
-    process
-    TextEncoder
-    TextDecoder
-    URL
-    URLSearchParams
-    WebAssembly
+    console.log('__dirname  ---->  ', __dirname);
+    console.log('__filename  ---->  ', __filename);
+    console.log('console  ---->  ', console);
+    console.log('global  ---->  ', global);
+    console.log('exports  ---->  ', exports);
+    console.log('module  ---->  ', module);
+    console.log('process  ---->  ', process);
+    console.log('TextEncoder  ---->  ', TextEncoder);
+    console.log('TextDecoder  ---->  ', TextDecoder);
+    console.log('URL  ---->  ', URL);
+    console.log('URLSearchParams  ---->  ', URLSearchParams);
+    console.log('WebAssembly  ---->  ', WebAssembly);
     queueMicrotask()
     setImmediate()
     setInterval()
