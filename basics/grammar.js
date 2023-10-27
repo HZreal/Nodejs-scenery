@@ -9,7 +9,7 @@ function dataType() {
 /**
  * 模块引入
  */
-const {add} = require('./myModule/public')
+const { add } = require('./myModule/public')
 
 // import {sub} from './myModule/public' // ES module
 function introduceModule() {
@@ -52,11 +52,11 @@ function globalObject() {
  */
 function excludeFieldFromObject(){
     const obj = {
-            userId: 1,
-            username: 'john',
-            password: 'changeme',
+        userId: 1,
+        username: 'john',
+        password: 'changeme'
     }
-    const {password, ...extra} = obj
+    const { password, ...extra} = obj
     console.log('extra  ---->  ', extra);
 }
 
