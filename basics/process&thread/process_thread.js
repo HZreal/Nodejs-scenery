@@ -117,7 +117,7 @@ execFile(`node`, ['-v'], (error, stdout, stderr) => {
 })
 
 // 方式四：fork
-fork('./worker.js'); // fork 一个新的子进程
+fork('./worker_demo.js'); // fork 一个新的子进程
 
 // fork子进程充分利用CPU资源
 // 上文单线程一节 例子中，当 CPU 计算密度大的情况程序会造成阻塞导致后续请求需要等待，下面采用 child_process.fork 方法，在进行 cpmpute 计算时创建子进程，子进程计算完成通过 send 方法将结果发送给主进程，主进程通过 message 监听到信息后处理并退出。
@@ -180,7 +180,7 @@ process.title = 'node-master'
 
 const workers = {};
 const createWorker = () => {
-    const worker = fork('worker.js')
+    const worker = fork('worker_demo.js')
     worker.on('message', (message) => {
         if (message.act === 'suicide') {
             createWorker();
